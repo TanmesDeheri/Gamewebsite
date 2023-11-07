@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Styles/Welcome.css'
+import CommonButtons from './CommonButtons'
 const Welcome=()=> {
     return (
         <>
@@ -9,7 +10,7 @@ const Welcome=()=> {
                     <p>Find any game you want</p>
                     <p>Download All the Games for free</p>
                 </div>
-                <button className='btn success'>Browse</button>
+                <CommonButtons title='Browse'/>
             </div>
         </>
     )

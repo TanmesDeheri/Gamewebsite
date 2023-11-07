@@ -5,7 +5,7 @@ import About from './About'
 const Controller=()=> {
   return (
     <div>
-      <About/>
+      <About toggleTheme='#1f1f1f' toggleTextColor='white'/>
     </div>
   )
 }

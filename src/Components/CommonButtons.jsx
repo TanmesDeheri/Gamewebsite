@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
- const CommonButtons = () => {
+ const CommonButtons = (props) => {
   return (<>
-    <Button variant="outline-success"></Button>
+    <Button variant="outline-success">{props.title}</Button>
     </>
   )
 
