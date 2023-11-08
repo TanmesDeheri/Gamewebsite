@@ -2,11 +2,19 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import React from 'react'
+import {React,useState} from 'react'
 import '../Styles/Navbar.css'
-export default function NavBarrr() {
+import Form from 'react-bootstrap/Form';
+
+export default function NavBarrr(props) {
+    const [darkMode, setdarkMode] = useState(false)
+    const handleSwitch=(event)=>{
+        const ischecked=event.target.checked
+        setdarkMode(ischecked)
+       props.handleTheme(darkMode)
+    }
     return (
-        <div>
+        <div style={{borderBottom:'2px solid wheat'}}>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
                     <Navbar.Brand href="#home">GameHub</Navbar.Brand>
@@ -38,6 +46,16 @@ export default function NavBarrr() {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
+                <Form>
+                    <Form.Check
+                        type="switch"
+                        id="custom-switch"
+                        label="Dark Mode 🌛"
+                        style={{color:'black'}}
+                        checked={darkMode}
+                        onChange={handleSwitch}
+                    />
+                 </Form>
             </Navbar>
         </div>
     )

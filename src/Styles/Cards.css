@@ -1,12 +1,12 @@
-.cards-mystyledark{
+.cards{
     margin-top: 1em;
-    width: 21em;
+    margin-left: 0.3em;
+}
+.cards-mystyledark{
     color: wheat;
     background-color: black;
 }
 .cards-mystylewhite{
-    margin-top: 1em;
-    width: 21em;
     color: black;
     background-color: whitesmoke;
 }

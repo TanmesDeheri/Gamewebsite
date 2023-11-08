@@ -4,9 +4,12 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { React, useState, useEffect } from 'react'
 import '../Styles/Cards.css'
+import apiClient from '../Services/apiClient';
 
 export default function Cardsss(props) {
     const [toggleCardTheme, settoggleCardTheme] = useState(null)
+    const [Games, setGames] = useState([])
+    const [Error, setError] = useState(null)
     useEffect(() => {
         document.body.style.backgroundColor = props.toggleTheme
         document.body.style.color = props.toggleTextColor
@@ -15,20 +18,24 @@ export default function Cardsss(props) {
         else
             settoggleCardTheme('cards-mystylelight')
     }, [props.toggleTheme,props.toggleTextColor])
+    useEffect(() => {
+     apiClient.get('/games').then(res=>setGames(res.data.results)).catch(err=>setError(err.message))
+    }, [])
+    
 
     return (
-        <div>
+        <>
+        {Error && <h2>{Error}</h2>}
+        <div className='cards'>
             <Row xs={1} md={4} className="g-2">
-                {Array.from({ length: 40 }).map((_, idx) => (
-                    <Col key={idx}>
+                {Games.map((game) => (
+                    <Col key={game.id}>
                         <Card className={toggleCardTheme}>
-                            <Card.Img variant="top" src="holder.js/100px160" />
+                            <Card.Img variant="top" src={game.background_image} style={{height:'12em'}} />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
-                                <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                <Card.Title>{game.name}</Card.Title>
+                                <Card.Text><strong>Released On:</strong>
+                                    {game.released}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -36,5 +43,7 @@ export default function Cardsss(props) {
                 ))}
             </Row>
         </div>
+        </>
+        
     )
 }
