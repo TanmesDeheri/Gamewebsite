@@ -1,11 +1,11 @@
 import React from 'react'
-import About from './About'
+import MainPage from './MainPage'
 
 
 const Controller=()=> {
   return (
     <div>
-      <About toggleTheme='#1f1f1f' toggleTextColor='white'/>
+      <MainPage/>
     </div>
   )
 }
