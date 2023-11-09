@@ -1,18 +1,33 @@
-*{
+.Welcomepage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgb(26, 26, 26);
     color: wheat;
 }
+
 .Welcomepage {
-    margin-top: 5em;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
 }
-h1{
+
+.h1class {
+    display: flex;
     font-size: 5em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
 }
-p{
+
+.p1 {
     font-size: 2em;
 }
+
 .btn {
     border: 2px solid wheat;
     background-color: #05050500;
@@ -22,8 +37,9 @@ p{
     font-size: 16px;
     cursor: pointer;
     width: 12em;
-  }
-  .success {
+}
+
+.success {
     border-color: #1bd932;
     color: #55ff45;
-  }
+}

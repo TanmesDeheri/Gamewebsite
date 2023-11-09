@@ -1,6 +1,5 @@
-.navbar-default {
-    background-color: blue;
-  }
-  .bg-body-tertiar{
-    background-color: aquamarine;
-  }
+.navbar{
+    align-items: flex-end;
+    height: 3em;
+    border-bottom: 3px solid greenyellow;
+}

@@ -34,7 +34,7 @@ export default function Cardsss(props) {
                             <Card.Img variant="top" src={game.background_image} style={{height:'12em'}} />
                             <Card.Body>
                                 <Card.Title>{game.name}</Card.Title>
-                                <Card.Text><strong>Released On:</strong>
+                                <Card.Text>Released On:
                                     {game.released}
                                 </Card.Text>
                             </Card.Body>
